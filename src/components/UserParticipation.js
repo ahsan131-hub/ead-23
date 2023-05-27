@@ -1,6 +1,6 @@
 import { useQuestions } from "../context/Questions";
 import React from "react";
-import { Button } from "antd";
+import { Button, Divider } from "antd";
 
 function UserParticipation({ submitted, setSubmitted }) {
   const { questions, updateVote } = useQuestions();
@@ -14,11 +14,12 @@ function UserParticipation({ submitted, setSubmitted }) {
   };
   return (
     <div>
+      <Divider />
       <div>
+        <h2>Poll Form</h2>
         <h1>{questions.question}</h1>
       </div>
       <div>
-        <h2>Poll Form</h2>
         <form onSubmit={handleSubmit}>
           {questions.choices.map((choice) => (
             <div key={choice.id}>
