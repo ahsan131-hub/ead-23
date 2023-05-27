@@ -1,9 +1,8 @@
 import { useQuestions } from "../context/Questions";
 import React from "react";
 
-function UserParticipation() {
+function UserParticipation({ submitted, setSubmitted }) {
   const { questions, updateVote } = useQuestions();
-  const [submitted, setSubmitted] = React.useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,7 +30,9 @@ function UserParticipation() {
               <label htmlFor={choice.id}>{choice.label}</label>
             </div>
           ))}
-          <button type="submit">Submit</button>
+          <button disabled={submitted} type="submit">
+            Submit
+          </button>
         </form>
       </div>
     </div>
