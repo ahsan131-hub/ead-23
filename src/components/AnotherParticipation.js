@@ -1,3 +1,5 @@
+import { Button } from "antd";
+
 export default function AnotherParticipation({ submitted, setSubmitted }) {
   const handleClick = () => {
     setSubmitted(false);
@@ -5,9 +7,9 @@ export default function AnotherParticipation({ submitted, setSubmitted }) {
 
   return (
     <>
-      <button disabled={!submitted} onClick={handleClick}>
+      <Button disabled={!submitted} onClick={handleClick} type="primary">
         Another Participation
-      </button>
+      </Button>
     </>
   );
 }

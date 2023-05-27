@@ -1,5 +1,6 @@
 import { useQuestions } from "../context/Questions";
 import React from "react";
+import { Button } from "antd";
 
 function UserParticipation({ submitted, setSubmitted }) {
   const { questions, updateVote } = useQuestions();
@@ -30,9 +31,9 @@ function UserParticipation({ submitted, setSubmitted }) {
               <label htmlFor={choice.id}>{choice.label}</label>
             </div>
           ))}
-          <button disabled={submitted} type="submit">
+          <Button type="primary" htmlType="submit" disabled={submitted}>
             Submit
-          </button>
+          </Button>
         </form>
       </div>
     </div>
